@@ -1,0 +1,27 @@
+.\" Manpage for mcp
+.\" MIT License
+.TH MCP 1 "12 Jan 2024" "inopinatus" "mcp User Manual"
+.SH NAME
+mcp \- produce sparse files using mmap(2)
+.SH SYNOPSIS
+.B mcp
+.RI src
+.RI dst
+.SH DESCRIPTION
+.PP
+.B mcp
+is a sparse file production utility using mmap(2).
+.PP
+The destination will be produced using mmap(2) and memcpy(3),
+skipping zero pages, using a page size equal to the blocksize
+of the destination filesystem.
+.SH EXIT STATUS
+.PP
+The mcp utility exits with 0 on success, or >0 if an error occurs.
+.SH CONTRIBUTING
+.PP
+Visit the Github project: https://github.com/inopinatus/mcp
+.SH SEE ALSO
+.BR cp (1),
+.BR dd (1),
+.BR copyfile (3)
